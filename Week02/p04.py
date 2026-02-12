@@ -4,6 +4,7 @@ result in a dictionary. Prints the dictionary with words as keys
 and their frequencies as values. """
 
 sentence=input("Enter a sentence: ")
+sentence=sentence.lowercase()
 words=sentence.split()
 freq={}
 for word in words:
