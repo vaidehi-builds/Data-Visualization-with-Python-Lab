@@ -6,9 +6,9 @@ def printseq():
     evensum=0
     for i in range(1,100+1):
         if i%2!=0:
-            print(i)
+            print(i, end=" ")
         else:
             evensum+=i
-    print("Sum of the even numbers: ",evensum)
+    print("\nSum of the even numbers: ",evensum)
 
 printseq()
