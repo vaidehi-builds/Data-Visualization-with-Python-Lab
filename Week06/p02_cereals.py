@@ -11,7 +11,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-df_raw=pd.read_csv("Week06/cereal.csv",)
+df_raw=pd.read_csv("Week06/cereal.csv")
 df=df_raw.copy()
 
 print("First 5 rows: ")
@@ -26,10 +26,11 @@ print(df.isnull().sum())
 print("\nNumber of (-1) values in each column: ")
 print((df==(-1)).sum())
 
-df['fiber']=df['fiber'].replace(-1,df["fiber"].mean())
+df['fiber']=df['fiber'].replace(-1,np.nan)
+df['fiber']=df['fiber'].fillna(df['fiber'].mean())
 
 print("Average Calories: ",df['calories'].mean().round(2))
-print("AVerage sugars: ",df['sugars'].mean().round(2))
+print("Average sugars: ",df['sugars'].mean().round(2))
 print("Average fiber: ",df['fiber'].mean().round(2))
 
 df_sugar=df.sort_values(by='sugars',ascending=False).head()

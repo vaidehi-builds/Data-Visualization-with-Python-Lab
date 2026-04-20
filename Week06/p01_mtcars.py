@@ -37,7 +37,9 @@ print(summary.round(2))
 
 plt.figure(figsize=(8,6))
 plt.boxplot([df[df['cyl']==c]['mpg'] for c in sorted(df['cyl'].unique())],
-            tick_labels=[f"{c} Cyl" for c in sorted(df['cyl'].unique())]) # this returns a pandas Series which is then accepted by boxplot() 
+            tick_labels=[f"{c} Cyl" for c in sorted(df['cyl'].unique())]) 
+# this returns a pandas Series which is then accepted by boxplot() 
+#WONT HAVE TO DO THAT WITH SEABORN
 plt.title("Relationship Between Engine Cylinders and Fuel Efficiency")
 plt.xlabel("Engine Cylinders")
 plt.ylabel("Miles per Gallon (mpg)")
